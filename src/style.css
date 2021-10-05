@@ -1,0 +1,80 @@
+* {
+  list-style: none;
+  padding: 0;
+}
+
+form,
+main,
+.page-header2 {
+  display: flex;
+}
+
+body,
+.page-header1 {
+  margin: 0;
+}
+
+.page-header1 {
+  padding: 5% 0 0 5%;
+}
+
+.refresh,
+.submit {
+  height: 5vh;
+  box-shadow: 2px 2px 2px;
+  width: 40%;
+}
+
+.score {
+  padding: 3px 0 3px 10px;
+}
+
+.submit {
+  align-self: flex-end;
+}
+
+.page-header2 {
+  align-items: center;
+}
+
+.page-header2,
+main {
+  justify-content: space-between;
+}
+
+main {
+  padding: 5%;
+  align-items: flex-start;
+}
+
+.display {
+  width: 50%;
+}
+
+.score-board {
+  border: 2px solid black;
+}
+
+.score:nth-child(even) {
+  background-color: #d3d3d3;
+}
+
+#name,
+#scores,
+.submit {
+  margin-bottom: 20px;
+}
+
+form {
+  flex-direction: column;
+  width: 30%;
+  padding-right: 10%;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #d3d3d3;
+  text-align: center;
+}
