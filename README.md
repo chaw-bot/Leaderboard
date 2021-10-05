@@ -4,7 +4,7 @@
 
 # Web Preview
 
-![screenshot]()
+![screenshot](Screenshot.png)
 
 
 ## Built With
@@ -16,18 +16,18 @@
 
 ## Live Demo
 
-[Live Demo]()
+[Live Demo](https://chaw-bot.github.io/Leaderboard/dist/)
 
 # Install Instruction
 1. Open your terminal and `cd` to a proper location.
-2. Clone the Repo on you computer using `git clone `
+2. Clone the Repo on you computer using `git clone git@github.com:chaw-bot/Leaderboard.git`
 3. Make sure you have JavaScript installed; use `js -v` .
-4. Cd to the project directory`cd ` .
+4. Cd to the project directory`cd Leaderboard` .
 5. Use `node -v` to check if you have node instaled
 6. Install the dependencies in the local node_modules folder with `npm install`
 7. Then `npm start`
 
-## Authors
+## Author
 
 👤 **Chaw**
 
@@ -39,7 +39,7 @@
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page]().
+Feel free to check the [issues page](https://github.com/chaw-bot/Leaderboard/issues).
 
 ## Show your support
 
