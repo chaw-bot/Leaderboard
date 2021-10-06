@@ -50,3 +50,37 @@ refresh.addEventListener('click', () => {
     });
   });
 });
+
+async function addScore(url = "", data = {}) {
+  const response = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+
+  const scores = await response.json();
+  return scores;
+}
+
+const submitBtn = document.querySelector(".submit");
+
+submitBtn.addEventListener("click", (e) => {
+  const InputName = document.getElementById('names');
+  const InputScore = document.getElementById('scores');
+
+  let name = InputName.value;
+  let score = InputScore.value;
+
+  addScore(
+    "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/jM1sByj470X5lUptQV2M/scores",
+    { user: name, score: score }
+  ).then((data) => { data; });
+
+  InputName.value = '';
+  InputScore.value = '';
+  e.preventDefault();
+});
+
+window.onload = getScores();
