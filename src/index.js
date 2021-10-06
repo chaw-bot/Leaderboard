@@ -24,3 +24,29 @@ if (localStorage.getItem("Game-ID") === null) {
     localStorage.setItem("Game-ID", JSON.stringify(id));
   });
 }
+
+async function getScores() {
+  const list = document.querySelector(".score-board");
+
+  list.innerHTML = "";
+
+  const response = await fetch(
+    "https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/jM1sByj470X5lUptQV2M/scores"
+  );
+  const scores = await response.json();
+  return scores;
+}
+
+const refresh = document.querySelector('.refresh');
+refresh.addEventListener('click', () => {
+  getScores().then(scores => {
+    const user = scores.result;
+    user.forEach(user => {
+      const list = document.querySelector(".score-board");
+      const person = document.createElement('li');
+      person.className = 'score';
+      person.innerHTML = `${user.user}  :  ${user.score}`;
+      list.appendChild(person)
+    });
+  });
+});
