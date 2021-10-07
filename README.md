@@ -29,7 +29,7 @@
 
 ## Author
 
-👤 **Chaw**
+👤 **Chawanzi Ng'uni**
 
 - GitHub: [@chaw-bot](https://github.com/chaw-bot)
 - Twitter: [@chaw36422087](https://twitter.com/chaw36422087)
