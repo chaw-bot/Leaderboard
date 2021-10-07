@@ -72,8 +72,7 @@ submitBtn.addEventListener('click', (e) => {
   const score = InputScore.value;
   
   addScore('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/nBQCymqMWMPxm9purHyt/scores',
-    { user: name, score: score },
-  );
+    { user: name, score },);
 
   InputName.value = '';
   InputScore.value = '';
