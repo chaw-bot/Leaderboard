@@ -1,6 +1,15 @@
 * {
   list-style: none;
   padding: 0;
+  font-family: sans-serif;
+}
+
+html {
+  background-image: url(/backkground.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 form,
@@ -22,6 +31,8 @@ body,
 .submit {
   height: 5vh;
   box-shadow: 2px 2px 2px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .score {
@@ -52,15 +63,33 @@ main {
 }
 
 .display {
+  border-radius: 5%;
   width: 50%;
+  background-color: rgb(170, 137, 137, 0.6);
+  padding: 0 3% 0 3%;
 }
 
 .score-board {
-  border: 2px solid black;
+  height: 50vh;
+  overflow-y: scroll;
 }
 
 .score:nth-child(even) {
   background-color: #d3d3d3;
+}
+
+.error {
+  background-color: red;
+  margin-top: 10px;
+  padding: 5px;
+  color: white;
+}
+
+.added {
+  background-color: green;
+  margin-top: 10px;
+  padding: 5px;
+  color: white;
 }
 
 #names,
@@ -72,13 +101,38 @@ main {
 form {
   flex-direction: column;
   width: 30%;
-  padding-right: 10%;
+  padding-right: 5%;
+  padding-left: 5%;
+  background-color: rgb(170, 137, 137, 0.6);
+  border-radius: 5%;
 }
 
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: #d3d3d3;
+  background-color: rgba(134, 127, 127, 0.6);
   text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    text-align: center;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  form,
+  .display {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .score-board {
+    height: 30vh;
+  }
 }

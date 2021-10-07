@@ -73,11 +73,28 @@ submitBtn.addEventListener('click', (e) => {
   const name = InputName.value;
   const score = InputScore.value;
 
-  addScore(`${baseUrl}/api/games/nBQCymqMWMPxm9purHyt/scores`,
-    { user: name, score });
+  const form = document.querySelector('form');
 
-  InputName.value = '';
-  InputScore.value = '';
+  if (name === '' || score === '') {
+    form.insertAdjacentHTML('afterbegin', '<div class="error">Please make sure both fields are filled</div>');
+
+    setTimeout(() => {
+      document.querySelector('.error').remove();
+    }, 3000);
+  } else {
+    addScore(`${baseUrl}/api/games/nBQCymqMWMPxm9purHyt/scores`,
+      { user: name, score });
+
+    form.insertAdjacentHTML('afterbegin', '<div class="added">Thank you! Your score has been recorded</div>');
+
+    setTimeout(() => {
+      document.querySelector('.added').remove();
+    }, 3000);
+
+    InputName.value = '';
+    InputScore.value = '';
+  }
+
   e.preventDefault();
 });
 
