@@ -76,7 +76,7 @@ submitBtn.addEventListener('click', (e) => {
   const form = document.querySelector('form');
 
   if (name === '' || score === '') {
-    form.insertAdjacentHTML('afterbegin', `<div class='error'>Make sure both fields are filled</div>`);
+    form.insertAdjacentHTML('afterbegin', '<div class="error">Please make sure both fields are filled</div>');
 
     setTimeout(() => {
       document.querySelector('.error').remove();
@@ -85,7 +85,7 @@ submitBtn.addEventListener('click', (e) => {
     addScore(`${baseUrl}/api/games/nBQCymqMWMPxm9purHyt/scores`,
       { user: name, score });
 
-    form.insertAdjacentHTML('afterbegin', '<div class="added">Your score has been recorded</div>');
+    form.insertAdjacentHTML('afterbegin', '<div class="added">Thank you! Your score has been recorded</div>');
 
     setTimeout(() => {
       document.querySelector('.added').remove();
