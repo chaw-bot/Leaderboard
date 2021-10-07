@@ -1,9 +1,11 @@
 import './style.css';
 
+const baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net';
+
 // create new game
 async function getID() {
   const response = await fetch(
-    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/',
+    `${baseUrl}/api/games/`,
     {
       method: 'POST',
       body: JSON.stringify({
@@ -29,7 +31,7 @@ async function getScores() {
   list.innerHTML = '';
 
   const response = await fetch(
-    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/nBQCymqMWMPxm9purHyt/scores',
+    `${baseUrl}/api/games/nBQCymqMWMPxm9purHyt/scores`,
   );
   const scores = await response.json();
   return scores;
@@ -71,7 +73,7 @@ submitBtn.addEventListener('click', (e) => {
   const name = InputName.value;
   const score = InputScore.value;
   
-  addScore('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/nBQCymqMWMPxm9purHyt/scores',
+  addScore(`${baseUrl}/api/games/nBQCymqMWMPxm9purHyt/scores`,
     { user: name, score },);
 
   InputName.value = '';
