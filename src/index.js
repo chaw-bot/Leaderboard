@@ -72,9 +72,9 @@ submitBtn.addEventListener('click', (e) => {
 
   const name = InputName.value;
   const score = InputScore.value;
-  
+
   addScore(`${baseUrl}/api/games/nBQCymqMWMPxm9purHyt/scores`,
-    { user: name, score },);
+    { user: name, score });
 
   InputName.value = '';
   InputScore.value = '';
