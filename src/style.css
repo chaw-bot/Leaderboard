@@ -22,15 +22,19 @@ body,
 .submit {
   height: 5vh;
   box-shadow: 2px 2px 2px;
-  width: 40%;
 }
 
 .score {
   padding: 3px 0 3px 10px;
 }
 
+.refresh {
+  width: 30%;
+}
+
 .submit {
   align-self: flex-end;
+  width: 30%;
 }
 
 .page-header2 {
@@ -59,7 +63,7 @@ main {
   background-color: #d3d3d3;
 }
 
-#name,
+#names,
 #scores,
 .submit {
   margin-bottom: 20px;
