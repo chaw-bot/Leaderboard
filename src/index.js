@@ -75,17 +75,17 @@ submitBtn.addEventListener('click', (e) => {
 
   const form = document.querySelector('form');
 
-  if(name === '' || score === '') { 
-    form.insertAdjacentHTML('afterbegin', `<div class="error">Make sure both fields are filled</div>`);
+  if (name === '' || score === '') {
+    form.insertAdjacentHTML('afterbegin', `<div class='error'>Make sure both fields are filled</div>`);
 
     setTimeout(() => {
       document.querySelector('.error').remove();
     }, 3000);
   } else {
     addScore(`${baseUrl}/api/games/nBQCymqMWMPxm9purHyt/scores`,
-    { user: name, score });
+      { user: name, score });
 
-    form.insertAdjacentHTML('afterbegin', `<div class="added">Your score has been recorded</div>`);
+    form.insertAdjacentHTML('afterbegin', '<div class="added">Your score has been recorded</div>');
 
     setTimeout(() => {
       document.querySelector('.added').remove();
