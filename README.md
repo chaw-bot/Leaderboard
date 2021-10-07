@@ -4,8 +4,13 @@
 
 # Web Preview
 
-![screenshot](Screenshot.png)
+Desktop Version
 
+![screenshot](Screenshot1.png)
+
+mobile Version
+
+![screenshot](Screenshot2.png)
 
 ## Built With
 
