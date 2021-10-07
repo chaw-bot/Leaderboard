@@ -116,3 +116,24 @@ footer {
   text-align: center;
 }
 
+@media screen and (max-width: 480px) {
+  header {
+    text-align: center;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  form,
+  .display {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .score-board {
+    height: 30vh;
+  }
+}
