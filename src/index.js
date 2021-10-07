@@ -1,30 +1,27 @@
 import './style.css';
 
 // create new game
-if (localStorage.getItem('Game-ID') === null) {
-  /* eslint-disable */
-  async function getID() {
-    const response = await fetch(
-      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/',
-      {
-        method: 'POST',
-        body: JSON.stringify({
-          name: 'Formula 1',
-        }),
-        headers: {
-          'Content-type': 'application/json; charset=UTF-8',
-        },
+async function getID() {
+  const response = await fetch(
+    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/',
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        name: 'Formula 1',
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
       },
-    );
+    },
+  );
 
-    const id = await response.json();
-    return id;
-  }
-  /* eslint-enable */
-  getID().then((id) => {
-    localStorage.setItem('Game-ID', JSON.stringify(id));
-  });
+  const id = await response.json();
+  return id;
 }
+
+getID().then((id) => {
+  localStorage.setItem('Game-ID', JSON.stringify(id));
+});
 
 async function getScores() {
   const list = document.querySelector('.score-board');
@@ -32,7 +29,7 @@ async function getScores() {
   list.innerHTML = '';
 
   const response = await fetch(
-    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/jM1sByj470X5lUptQV2M/scores',
+    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/nBQCymqMWMPxm9purHyt/scores',
   );
   const scores = await response.json();
   return scores;
@@ -73,12 +70,11 @@ submitBtn.addEventListener('click', (e) => {
 
   const name = InputName.value;
   const score = InputScore.value;
-  /* eslint-disable */ 
-  addScore(
-    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/jM1sByj470X5lUptQV2M/scores',
+  
+  addScore('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/nBQCymqMWMPxm9purHyt/scores',
     { user: name, score: score },
-  ).then((data) => { data; });
-  /* eslint-enable */
+  );
+
   InputName.value = '';
   InputScore.value = '';
   e.preventDefault();
